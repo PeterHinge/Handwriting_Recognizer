@@ -21,7 +21,6 @@ def Draw():
     while not program_exit:
         left_pressed, middle_pressed, right_pressed = mouse.get_pressed()
         for event in pygame.event.get():
-            print(event)
             if event.type == pygame.QUIT:
                 program_exit = True
             elif left_pressed:
@@ -31,7 +30,7 @@ def Draw():
     """Grabs a 2d array of the pixels of the drawing interface."""
     screen_array = pygame.surfarray.pixels2d(screen)
 
-    """Modifying the array (from 128x128 to 8x8 pixels) and turning it into a 1d list."""
+    """Modifying the array (from 128x128 to 8x8 pixels) and turning it into a 1d list (desired output)."""
     lst = []
     row_col_num = [1, 2, 3, 4, 5, 6, 7, 8]
     for j in row_col_num:

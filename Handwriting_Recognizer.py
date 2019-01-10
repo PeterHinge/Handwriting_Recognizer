@@ -85,4 +85,4 @@ def translation(new_label):
 
 """The predicted digit."""
 new_digit = translation(new_label)
-print("I think you wrote {}".format(new_digit))
+print("Predicted digit: {}".format(new_digit))
