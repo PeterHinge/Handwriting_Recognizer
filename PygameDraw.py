@@ -76,6 +76,14 @@ print(screen_array.ndim)
 print(screen_array.size)
 print(screen_array.shape)
 
+print(1 - (sum(sum(screen_array[0:16, 0:16])) / 256 / 16777215))
+print(1 - (sum(sum(screen_array[16:32, 0:16])) / 256 / 16777215))
+print(1 - (sum(sum(screen_array[32:48, 0:16])) / 256 / 16777215))
+print(1 - (sum(sum(screen_array[48:64, 0:16])) / 256 / 16777215))
+
+
+
+
 
 """
 redone = blockshaped(screen_array, 8, 8)
