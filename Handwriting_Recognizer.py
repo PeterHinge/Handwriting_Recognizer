@@ -3,8 +3,10 @@ from matplotlib import pyplot as plt
 from sklearn import datasets
 from sklearn.cluster import KMeans
 
+
 """scikit-learn training dataset of handwritten digits of 30 Turkish men from 1998:"""
 digits = datasets.load_digits()
+
 
 """Creating the clustering unsupervised model: Number of clusters is set to 10 (digits 0-9). 
 A fixed state ensures that the model is build in the same way across multiple runs. 
@@ -13,8 +15,10 @@ This is important insofar as our model is not aware that the clusters represent 
 As such the actual value of "random_state" is irrelevant as long as it is consistent:"""
 model = KMeans(n_clusters=10, random_state=1)
 
+
 """Fitting the data to the model"""
 model.fit(digits.data)
+
 
 """This function provides visualization of the cluster's centers look like in the data-fitted model. 
 No matter the origin state of our KMeans model the cluster-centers conversion will be almost identical, 
@@ -36,7 +40,13 @@ def cluster_centers():
 
 """This is gonna receive array data from a drawing Pygame application so the user can draw/write their own number 
 and the algorithm will predict what number was drawn."""
-new_sample = np.array([])
+new_sample = np.array(
+    []
+)
+
+
+"""Reshapes sample (a 1 dimensional array) to fit the model (fitted for a 2 dimensional array)."""
+new_sample = new_sample.reshape(1, -1)
 
 
 """A prediction of the sample is made based on which cluster mostly resembles the data input."""
