@@ -4,6 +4,10 @@ from sklearn import datasets
 from sklearn.cluster import KMeans
 
 
+"""Importing PygameDraw so we can draw a digit for our algorithm to predict"""
+from PygameDraw import Draw
+
+
 """scikit-learn training dataset of handwritten digits of 30 Turkish men from 1998:"""
 digits = datasets.load_digits()
 
@@ -38,10 +42,10 @@ def cluster_centers():
 # cluster_centers()
 
 
-"""This is gonna receive array data from a drawing Pygame application so the user can draw/write their own number 
-and the algorithm will predict what number was drawn."""
+"""This receives array data from a Pygame drawing script (PygameDraw.py), so the user 
+can draw/write their own number and the algorithm will predict what number was drawn."""
 new_sample = np.array(
-    []
+    Draw()
 )
 
 
@@ -81,4 +85,4 @@ def translation(new_label):
 
 """The predicted digit."""
 new_digit = translation(new_label)
-print(new_digit)
+print("I think you wrote {}".format(new_digit))
