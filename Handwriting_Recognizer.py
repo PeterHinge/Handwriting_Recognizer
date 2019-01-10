@@ -45,8 +45,9 @@ new_sample = np.array(
 )
 
 
-"""Reshapes sample (a 1 dimensional array) to fit the model (fitted for a 2 dimensional array)."""
-new_sample = new_sample.reshape(1, -1)
+"""Reshapes sample if sample is a 1 dimensional array to fit the model (fitted for a 2 dimensional array)."""
+if new_sample.ndim == 1:
+    new_sample = new_sample.reshape(1, -1)
 
 
 """A prediction of the sample is made based on which cluster mostly resembles the data input."""
