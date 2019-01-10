@@ -81,6 +81,15 @@ print(1 - (sum(sum(screen_array[16:32, 0:16])) / 256 / 16777215))
 print(1 - (sum(sum(screen_array[32:48, 0:16])) / 256 / 16777215))
 print(1 - (sum(sum(screen_array[48:64, 0:16])) / 256 / 16777215))
 
+lst = []
+
+lst1 = [1,2,3,4,5,6,7,8]
+
+for j in lst1:
+    for i in lst1:
+        lst.append((1 - (sum(sum(screen_array[i*16-16:i*16, j*16-16:j*16])) / 256 / 16777215)) * 7.62)
+
+print(lst)
 
 
 
